@@ -12,7 +12,7 @@ import introsde.project.data.local.soap.FoodType;
 import introsde.project.data.local.soap.MovieGen;
 import introsde.project.data.local.soap.Person;
 
-@WebService(endpointInterface = "introsde.project.storage.soap.StorageInterface")
+@WebService(endpointInterface = "introsde.project.business.soap.BusinessInterface")
 public class BusinessImpl implements BusinessInterface {
 
 	public BusinessImpl(){
