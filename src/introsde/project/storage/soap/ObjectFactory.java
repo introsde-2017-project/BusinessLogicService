@@ -25,6 +25,7 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _GetUserRatingsResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getUserRatingsResponse");
+    private final static QName _GetItem_QNAME = new QName("http://soap.storage.project.introsde/", "getItem");
     private final static QName _UpdateUser_QNAME = new QName("http://soap.storage.project.introsde/", "updateUser");
     private final static QName _GetItemRatings_QNAME = new QName("http://soap.storage.project.introsde/", "getItemRatings");
     private final static QName _GetMovieGensResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getMovieGensResponse");
@@ -41,11 +42,12 @@ public class ObjectFactory {
     private final static QName _GetRec4UserResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getRec4UserResponse");
     private final static QName _UpdateUserResponse_QNAME = new QName("http://soap.storage.project.introsde/", "updateUserResponse");
     private final static QName _GetFoodTypesResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getFoodTypesResponse");
-    private final static QName _AddNewUser_QNAME = new QName("http://soap.storage.project.introsde/", "addNewUser");
     private final static QName _AddNewRatingResponse_QNAME = new QName("http://soap.storage.project.introsde/", "addNewRatingResponse");
+    private final static QName _AddNewUser_QNAME = new QName("http://soap.storage.project.introsde/", "addNewUser");
     private final static QName _AddNewUserResponse_QNAME = new QName("http://soap.storage.project.introsde/", "addNewUserResponse");
     private final static QName _ModifyRatingResponse_QNAME = new QName("http://soap.storage.project.introsde/", "modifyRatingResponse");
     private final static QName _GetItemRatingsResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getItemRatingsResponse");
+    private final static QName _GetItemResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getItemResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: introsde.project.storage.soap
@@ -108,6 +110,14 @@ public class ObjectFactory {
      */
     public GetUserRatingsResponse createGetUserRatingsResponse() {
         return new GetUserRatingsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetItem }
+     * 
+     */
+    public GetItem createGetItem() {
+        return new GetItem();
     }
 
     /**
@@ -183,14 +193,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AddNewUser }
-     * 
-     */
-    public AddNewUser createAddNewUser() {
-        return new AddNewUser();
-    }
-
-    /**
      * Create an instance of {@link AddNewRatingResponse }
      * 
      */
@@ -199,11 +201,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AddNewUser }
+     * 
+     */
+    public AddNewUser createAddNewUser() {
+        return new AddNewUser();
+    }
+
+    /**
      * Create an instance of {@link GetItemRatingsResponse }
      * 
      */
     public GetItemRatingsResponse createGetItemRatingsResponse() {
         return new GetItemRatingsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetItemResponse }
+     * 
+     */
+    public GetItemResponse createGetItemResponse() {
+        return new GetItemResponse();
     }
 
     /**
@@ -237,6 +255,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getUserRatingsResponse")
     public JAXBElement<GetUserRatingsResponse> createGetUserRatingsResponse(GetUserRatingsResponse value) {
         return new JAXBElement<GetUserRatingsResponse>(_GetUserRatingsResponse_QNAME, GetUserRatingsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetItem }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getItem")
+    public JAXBElement<GetItem> createGetItem(GetItem value) {
+        return new JAXBElement<GetItem>(_GetItem_QNAME, GetItem.class, null, value);
     }
 
     /**
@@ -384,21 +411,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddNewUser }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "addNewUser")
-    public JAXBElement<AddNewUser> createAddNewUser(AddNewUser value) {
-        return new JAXBElement<AddNewUser>(_AddNewUser_QNAME, AddNewUser.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AddNewRatingResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "addNewRatingResponse")
     public JAXBElement<AddNewRatingResponse> createAddNewRatingResponse(AddNewRatingResponse value) {
         return new JAXBElement<AddNewRatingResponse>(_AddNewRatingResponse_QNAME, AddNewRatingResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddNewUser }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "addNewUser")
+    public JAXBElement<AddNewUser> createAddNewUser(AddNewUser value) {
+        return new JAXBElement<AddNewUser>(_AddNewUser_QNAME, AddNewUser.class, null, value);
     }
 
     /**
@@ -426,6 +453,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getItemRatingsResponse")
     public JAXBElement<GetItemRatingsResponse> createGetItemRatingsResponse(GetItemRatingsResponse value) {
         return new JAXBElement<GetItemRatingsResponse>(_GetItemRatingsResponse_QNAME, GetItemRatingsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetItemResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getItemResponse")
+    public JAXBElement<GetItemResponse> createGetItemResponse(GetItemResponse value) {
+        return new JAXBElement<GetItemResponse>(_GetItemResponse_QNAME, GetItemResponse.class, null, value);
     }
 
 }
