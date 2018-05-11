@@ -2,6 +2,7 @@ package introsde.project.business.soap;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.jws.WebService;
 
@@ -76,7 +77,7 @@ public class BusinessImpl implements BusinessInterface {
 	}
 
 	@Override
-	public String getItem(RecombeeDBType db, String itemName) {
+	public Map<String, Object> getItem(RecombeeDBType db, String itemName) {
 		return StorageService.getItem(db,itemName);
 	}
 	

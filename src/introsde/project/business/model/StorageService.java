@@ -2,6 +2,7 @@ package introsde.project.business.model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import introsde.project.adopter.recombee.soap.*;
 import introsde.project.data.local.soap.*;
@@ -32,8 +33,9 @@ public class StorageService {
 		return serviceInt.updateUser(person);
 	}
 
-	public static String getItem(RecombeeDBType db, String itemName) {
-		return serviceInt.getItem(db, itemName);
+	@SuppressWarnings("unchecked")
+	public static Map<String,Object> getItem(RecombeeDBType db, String itemName) {
+		return (Map<String, Object>) serviceInt.getItem(db, itemName);
 	}
 
 	public static List<String> getRecom(RecombeeDBType db, Person person, int quantity) {

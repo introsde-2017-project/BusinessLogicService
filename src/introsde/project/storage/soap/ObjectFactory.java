@@ -24,28 +24,36 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetUserRatingsResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getUserRatingsResponse");
     private final static QName _GetItem_QNAME = new QName("http://soap.storage.project.introsde/", "getItem");
-    private final static QName _UpdateUser_QNAME = new QName("http://soap.storage.project.introsde/", "updateUser");
     private final static QName _GetItemRatings_QNAME = new QName("http://soap.storage.project.introsde/", "getItemRatings");
-    private final static QName _GetMovieGensResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getMovieGensResponse");
-    private final static QName _GetRec4User_QNAME = new QName("http://soap.storage.project.introsde/", "getRec4User");
     private final static QName _GetMovieGens_QNAME = new QName("http://soap.storage.project.introsde/", "getMovieGens");
     private final static QName _GetUserRatings_QNAME = new QName("http://soap.storage.project.introsde/", "getUserRatings");
-    private final static QName _GetFoodTypes_QNAME = new QName("http://soap.storage.project.introsde/", "getFoodTypes");
     private final static QName _GetUserResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getUserResponse");
     private final static QName _AddNewItem_QNAME = new QName("http://soap.storage.project.introsde/", "addNewItem");
     private final static QName _GetUser_QNAME = new QName("http://soap.storage.project.introsde/", "getUser");
-    private final static QName _ModifyRating_QNAME = new QName("http://soap.storage.project.introsde/", "modifyRating");
     private final static QName _AddNewItemResponse_QNAME = new QName("http://soap.storage.project.introsde/", "addNewItemResponse");
-    private final static QName _AddNewRating_QNAME = new QName("http://soap.storage.project.introsde/", "addNewRating");
     private final static QName _GetRec4UserResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getRec4UserResponse");
     private final static QName _UpdateUserResponse_QNAME = new QName("http://soap.storage.project.introsde/", "updateUserResponse");
     private final static QName _GetFoodTypesResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getFoodTypesResponse");
-    private final static QName _AddNewRatingResponse_QNAME = new QName("http://soap.storage.project.introsde/", "addNewRatingResponse");
     private final static QName _AddNewUser_QNAME = new QName("http://soap.storage.project.introsde/", "addNewUser");
+    private final static QName _AddNewRatingResponse_QNAME = new QName("http://soap.storage.project.introsde/", "addNewRatingResponse");
     private final static QName _AddNewUserResponse_QNAME = new QName("http://soap.storage.project.introsde/", "addNewUserResponse");
+    private final static QName _InitDBResponse_QNAME = new QName("http://soap.storage.project.introsde/", "initDBResponse");
+    private final static QName _GetAllItemResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getAllItemResponse");
+    private final static QName _GetItemByType_QNAME = new QName("http://soap.storage.project.introsde/", "getItemByType");
+    private final static QName _GetUserRatingsResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getUserRatingsResponse");
+    private final static QName _ResetDB_QNAME = new QName("http://soap.storage.project.introsde/", "resetDB");
+    private final static QName _UpdateUser_QNAME = new QName("http://soap.storage.project.introsde/", "updateUser");
+    private final static QName _GetItemByTypeResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getItemByTypeResponse");
+    private final static QName _GetMovieGensResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getMovieGensResponse");
+    private final static QName _GetRec4User_QNAME = new QName("http://soap.storage.project.introsde/", "getRec4User");
+    private final static QName _ResetDBResponse_QNAME = new QName("http://soap.storage.project.introsde/", "resetDBResponse");
+    private final static QName _InitDB_QNAME = new QName("http://soap.storage.project.introsde/", "initDB");
+    private final static QName _GetFoodTypes_QNAME = new QName("http://soap.storage.project.introsde/", "getFoodTypes");
+    private final static QName _ModifyRating_QNAME = new QName("http://soap.storage.project.introsde/", "modifyRating");
+    private final static QName _AddNewRating_QNAME = new QName("http://soap.storage.project.introsde/", "addNewRating");
     private final static QName _ModifyRatingResponse_QNAME = new QName("http://soap.storage.project.introsde/", "modifyRatingResponse");
+    private final static QName _GetAllItem_QNAME = new QName("http://soap.storage.project.introsde/", "getAllItem");
     private final static QName _GetItemRatingsResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getItemRatingsResponse");
     private final static QName _GetItemResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getItemResponse");
 
@@ -57,11 +65,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetFoodTypes }
+     * Create an instance of {@link GetItemResponse }
      * 
      */
-    public GetFoodTypes createGetFoodTypes() {
-        return new GetFoodTypes();
+    public GetItemResponse createGetItemResponse() {
+        return new GetItemResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetItemResponse.ListofPropertiesofItems }
+     * 
+     */
+    public GetItemResponse.ListofPropertiesofItems createGetItemResponseListofPropertiesofItems() {
+        return new GetItemResponse.ListofPropertiesofItems();
     }
 
     /**
@@ -70,14 +86,6 @@ public class ObjectFactory {
      */
     public GetUserResponse createGetUserResponse() {
         return new GetUserResponse();
-    }
-
-    /**
-     * Create an instance of {@link ModifyRating }
-     * 
-     */
-    public ModifyRating createModifyRating() {
-        return new ModifyRating();
     }
 
     /**
@@ -105,27 +113,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetUserRatingsResponse }
-     * 
-     */
-    public GetUserRatingsResponse createGetUserRatingsResponse() {
-        return new GetUserRatingsResponse();
-    }
-
-    /**
      * Create an instance of {@link GetItem }
      * 
      */
     public GetItem createGetItem() {
         return new GetItem();
-    }
-
-    /**
-     * Create an instance of {@link UpdateUser }
-     * 
-     */
-    public UpdateUser createUpdateUser() {
-        return new UpdateUser();
     }
 
     /**
@@ -153,35 +145,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetMovieGensResponse }
-     * 
-     */
-    public GetMovieGensResponse createGetMovieGensResponse() {
-        return new GetMovieGensResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetRec4User }
-     * 
-     */
-    public GetRec4User createGetRec4User() {
-        return new GetRec4User();
-    }
-
-    /**
      * Create an instance of {@link AddNewUserResponse }
      * 
      */
     public AddNewUserResponse createAddNewUserResponse() {
         return new AddNewUserResponse();
-    }
-
-    /**
-     * Create an instance of {@link ModifyRatingResponse }
-     * 
-     */
-    public ModifyRatingResponse createModifyRatingResponse() {
-        return new ModifyRatingResponse();
     }
 
     /**
@@ -193,14 +161,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AddNewRatingResponse }
-     * 
-     */
-    public AddNewRatingResponse createAddNewRatingResponse() {
-        return new AddNewRatingResponse();
-    }
-
-    /**
      * Create an instance of {@link AddNewUser }
      * 
      */
@@ -209,27 +169,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetItemRatingsResponse }
+     * Create an instance of {@link AddNewRatingResponse }
      * 
      */
-    public GetItemRatingsResponse createGetItemRatingsResponse() {
-        return new GetItemRatingsResponse();
+    public AddNewRatingResponse createAddNewRatingResponse() {
+        return new AddNewRatingResponse();
     }
 
     /**
-     * Create an instance of {@link GetItemResponse }
+     * Create an instance of {@link InitDBResponse }
      * 
      */
-    public GetItemResponse createGetItemResponse() {
-        return new GetItemResponse();
-    }
-
-    /**
-     * Create an instance of {@link AddNewRating }
-     * 
-     */
-    public AddNewRating createAddNewRating() {
-        return new AddNewRating();
+    public InitDBResponse createInitDBResponse() {
+        return new InitDBResponse();
     }
 
     /**
@@ -249,12 +201,139 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetUserRatingsResponse }{@code >}}
+     * Create an instance of {@link GetFoodTypes }
      * 
      */
-    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getUserRatingsResponse")
-    public JAXBElement<GetUserRatingsResponse> createGetUserRatingsResponse(GetUserRatingsResponse value) {
-        return new JAXBElement<GetUserRatingsResponse>(_GetUserRatingsResponse_QNAME, GetUserRatingsResponse.class, null, value);
+    public GetFoodTypes createGetFoodTypes() {
+        return new GetFoodTypes();
+    }
+
+    /**
+     * Create an instance of {@link InitDB }
+     * 
+     */
+    public InitDB createInitDB() {
+        return new InitDB();
+    }
+
+    /**
+     * Create an instance of {@link ModifyRating }
+     * 
+     */
+    public ModifyRating createModifyRating() {
+        return new ModifyRating();
+    }
+
+    /**
+     * Create an instance of {@link GetUserRatingsResponse }
+     * 
+     */
+    public GetUserRatingsResponse createGetUserRatingsResponse() {
+        return new GetUserRatingsResponse();
+    }
+
+    /**
+     * Create an instance of {@link ResetDB }
+     * 
+     */
+    public ResetDB createResetDB() {
+        return new ResetDB();
+    }
+
+    /**
+     * Create an instance of {@link UpdateUser }
+     * 
+     */
+    public UpdateUser createUpdateUser() {
+        return new UpdateUser();
+    }
+
+    /**
+     * Create an instance of {@link GetAllItemResponse }
+     * 
+     */
+    public GetAllItemResponse createGetAllItemResponse() {
+        return new GetAllItemResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetItemByType }
+     * 
+     */
+    public GetItemByType createGetItemByType() {
+        return new GetItemByType();
+    }
+
+    /**
+     * Create an instance of {@link GetItemByTypeResponse }
+     * 
+     */
+    public GetItemByTypeResponse createGetItemByTypeResponse() {
+        return new GetItemByTypeResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetMovieGensResponse }
+     * 
+     */
+    public GetMovieGensResponse createGetMovieGensResponse() {
+        return new GetMovieGensResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetRec4User }
+     * 
+     */
+    public GetRec4User createGetRec4User() {
+        return new GetRec4User();
+    }
+
+    /**
+     * Create an instance of {@link ResetDBResponse }
+     * 
+     */
+    public ResetDBResponse createResetDBResponse() {
+        return new ResetDBResponse();
+    }
+
+    /**
+     * Create an instance of {@link ModifyRatingResponse }
+     * 
+     */
+    public ModifyRatingResponse createModifyRatingResponse() {
+        return new ModifyRatingResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetItemRatingsResponse }
+     * 
+     */
+    public GetItemRatingsResponse createGetItemRatingsResponse() {
+        return new GetItemRatingsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAllItem }
+     * 
+     */
+    public GetAllItem createGetAllItem() {
+        return new GetAllItem();
+    }
+
+    /**
+     * Create an instance of {@link AddNewRating }
+     * 
+     */
+    public AddNewRating createAddNewRating() {
+        return new AddNewRating();
+    }
+
+    /**
+     * Create an instance of {@link GetItemResponse.ListofPropertiesofItems.Entry }
+     * 
+     */
+    public GetItemResponse.ListofPropertiesofItems.Entry createGetItemResponseListofPropertiesofItemsEntry() {
+        return new GetItemResponse.ListofPropertiesofItems.Entry();
     }
 
     /**
@@ -267,39 +346,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateUser }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "updateUser")
-    public JAXBElement<UpdateUser> createUpdateUser(UpdateUser value) {
-        return new JAXBElement<UpdateUser>(_UpdateUser_QNAME, UpdateUser.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetItemRatings }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getItemRatings")
     public JAXBElement<GetItemRatings> createGetItemRatings(GetItemRatings value) {
         return new JAXBElement<GetItemRatings>(_GetItemRatings_QNAME, GetItemRatings.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetMovieGensResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getMovieGensResponse")
-    public JAXBElement<GetMovieGensResponse> createGetMovieGensResponse(GetMovieGensResponse value) {
-        return new JAXBElement<GetMovieGensResponse>(_GetMovieGensResponse_QNAME, GetMovieGensResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetRec4User }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getRec4User")
-    public JAXBElement<GetRec4User> createGetRec4User(GetRec4User value) {
-        return new JAXBElement<GetRec4User>(_GetRec4User_QNAME, GetRec4User.class, null, value);
     }
 
     /**
@@ -318,15 +370,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getUserRatings")
     public JAXBElement<GetUserRatings> createGetUserRatings(GetUserRatings value) {
         return new JAXBElement<GetUserRatings>(_GetUserRatings_QNAME, GetUserRatings.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetFoodTypes }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getFoodTypes")
-    public JAXBElement<GetFoodTypes> createGetFoodTypes(GetFoodTypes value) {
-        return new JAXBElement<GetFoodTypes>(_GetFoodTypes_QNAME, GetFoodTypes.class, null, value);
     }
 
     /**
@@ -357,30 +400,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyRating }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "modifyRating")
-    public JAXBElement<ModifyRating> createModifyRating(ModifyRating value) {
-        return new JAXBElement<ModifyRating>(_ModifyRating_QNAME, ModifyRating.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AddNewItemResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "addNewItemResponse")
     public JAXBElement<AddNewItemResponse> createAddNewItemResponse(AddNewItemResponse value) {
         return new JAXBElement<AddNewItemResponse>(_AddNewItemResponse_QNAME, AddNewItemResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddNewRating }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "addNewRating")
-    public JAXBElement<AddNewRating> createAddNewRating(AddNewRating value) {
-        return new JAXBElement<AddNewRating>(_AddNewRating_QNAME, AddNewRating.class, null, value);
     }
 
     /**
@@ -411,21 +436,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddNewRatingResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "addNewRatingResponse")
-    public JAXBElement<AddNewRatingResponse> createAddNewRatingResponse(AddNewRatingResponse value) {
-        return new JAXBElement<AddNewRatingResponse>(_AddNewRatingResponse_QNAME, AddNewRatingResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AddNewUser }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "addNewUser")
     public JAXBElement<AddNewUser> createAddNewUser(AddNewUser value) {
         return new JAXBElement<AddNewUser>(_AddNewUser_QNAME, AddNewUser.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddNewRatingResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "addNewRatingResponse")
+    public JAXBElement<AddNewRatingResponse> createAddNewRatingResponse(AddNewRatingResponse value) {
+        return new JAXBElement<AddNewRatingResponse>(_AddNewRatingResponse_QNAME, AddNewRatingResponse.class, null, value);
     }
 
     /**
@@ -438,12 +463,147 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link InitDBResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "initDBResponse")
+    public JAXBElement<InitDBResponse> createInitDBResponse(InitDBResponse value) {
+        return new JAXBElement<InitDBResponse>(_InitDBResponse_QNAME, InitDBResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllItemResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getAllItemResponse")
+    public JAXBElement<GetAllItemResponse> createGetAllItemResponse(GetAllItemResponse value) {
+        return new JAXBElement<GetAllItemResponse>(_GetAllItemResponse_QNAME, GetAllItemResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetItemByType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getItemByType")
+    public JAXBElement<GetItemByType> createGetItemByType(GetItemByType value) {
+        return new JAXBElement<GetItemByType>(_GetItemByType_QNAME, GetItemByType.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetUserRatingsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getUserRatingsResponse")
+    public JAXBElement<GetUserRatingsResponse> createGetUserRatingsResponse(GetUserRatingsResponse value) {
+        return new JAXBElement<GetUserRatingsResponse>(_GetUserRatingsResponse_QNAME, GetUserRatingsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResetDB }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "resetDB")
+    public JAXBElement<ResetDB> createResetDB(ResetDB value) {
+        return new JAXBElement<ResetDB>(_ResetDB_QNAME, ResetDB.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateUser }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "updateUser")
+    public JAXBElement<UpdateUser> createUpdateUser(UpdateUser value) {
+        return new JAXBElement<UpdateUser>(_UpdateUser_QNAME, UpdateUser.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetItemByTypeResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getItemByTypeResponse")
+    public JAXBElement<GetItemByTypeResponse> createGetItemByTypeResponse(GetItemByTypeResponse value) {
+        return new JAXBElement<GetItemByTypeResponse>(_GetItemByTypeResponse_QNAME, GetItemByTypeResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMovieGensResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getMovieGensResponse")
+    public JAXBElement<GetMovieGensResponse> createGetMovieGensResponse(GetMovieGensResponse value) {
+        return new JAXBElement<GetMovieGensResponse>(_GetMovieGensResponse_QNAME, GetMovieGensResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetRec4User }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getRec4User")
+    public JAXBElement<GetRec4User> createGetRec4User(GetRec4User value) {
+        return new JAXBElement<GetRec4User>(_GetRec4User_QNAME, GetRec4User.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResetDBResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "resetDBResponse")
+    public JAXBElement<ResetDBResponse> createResetDBResponse(ResetDBResponse value) {
+        return new JAXBElement<ResetDBResponse>(_ResetDBResponse_QNAME, ResetDBResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link InitDB }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "initDB")
+    public JAXBElement<InitDB> createInitDB(InitDB value) {
+        return new JAXBElement<InitDB>(_InitDB_QNAME, InitDB.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetFoodTypes }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getFoodTypes")
+    public JAXBElement<GetFoodTypes> createGetFoodTypes(GetFoodTypes value) {
+        return new JAXBElement<GetFoodTypes>(_GetFoodTypes_QNAME, GetFoodTypes.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyRating }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "modifyRating")
+    public JAXBElement<ModifyRating> createModifyRating(ModifyRating value) {
+        return new JAXBElement<ModifyRating>(_ModifyRating_QNAME, ModifyRating.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddNewRating }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "addNewRating")
+    public JAXBElement<AddNewRating> createAddNewRating(AddNewRating value) {
+        return new JAXBElement<AddNewRating>(_AddNewRating_QNAME, AddNewRating.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ModifyRatingResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "modifyRatingResponse")
     public JAXBElement<ModifyRatingResponse> createModifyRatingResponse(ModifyRatingResponse value) {
         return new JAXBElement<ModifyRatingResponse>(_ModifyRatingResponse_QNAME, ModifyRatingResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllItem }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getAllItem")
+    public JAXBElement<GetAllItem> createGetAllItem(GetAllItem value) {
+        return new JAXBElement<GetAllItem>(_GetAllItem_QNAME, GetAllItem.class, null, value);
     }
 
     /**

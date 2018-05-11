@@ -2,6 +2,7 @@ package introsde.project.business.soap;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -61,8 +62,8 @@ public interface BusinessInterface {
 			);	
 	
 	@WebMethod(operationName="getItem")
-    @WebResult(name="StringId") 
-	public String getItem(
+    @WebResult(name="ListofPropertiesofItem") 
+	public Map<String, Object> getItem(
 			@WebParam(name="dbName") RecombeeDBType db,
 			@WebParam(name="itemName") String itemName
 			);
