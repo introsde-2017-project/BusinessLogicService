@@ -17,6 +17,7 @@ import introsde.project.data.local.soap.Person;
 public class BusinessImpl implements BusinessInterface {
 
 	public BusinessImpl(){
+		//initalize the recombee DB
 		StorageService.initDB(RecombeeDBType.FOOD_DB);
 		StorageService.initDB(RecombeeDBType.MOVIE_DB);
 	}
