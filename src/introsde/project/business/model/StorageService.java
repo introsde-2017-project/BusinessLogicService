@@ -62,5 +62,17 @@ public class StorageService {
 		return serviceInt.getUserRatings(db, person);
 	}
 
+	public static boolean initDB(RecombeeDBType db) {
+		return serviceInt.initDB(db);
+	}
+
+	public static List<String> getAllItem(RecombeeDBType db) {
+		return serviceInt.getAllItem(db);
+	}
+
+	public static List<String> getItemByType(RecombeeDBType db, String itemType) {
+		return serviceInt.getItemByType(db, itemType);
+	}
+
 	
 }

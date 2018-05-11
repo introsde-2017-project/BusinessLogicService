@@ -17,7 +17,8 @@ import introsde.project.data.local.soap.Person;
 public class BusinessImpl implements BusinessInterface {
 
 	public BusinessImpl(){
-		
+		StorageService.initDB(RecombeeDBType.FOOD_DB);
+		StorageService.initDB(RecombeeDBType.MOVIE_DB);
 	}
 
 	@Override
@@ -79,6 +80,16 @@ public class BusinessImpl implements BusinessInterface {
 	@Override
 	public Map<String, Object> getItem(RecombeeDBType db, String itemName) {
 		return StorageService.getItem(db,itemName);
+	}
+
+	@Override
+	public List<String> getAllItem(RecombeeDBType db) {
+		return StorageService.getAllItem(db);
+	}
+
+	@Override
+	public List<String> getItemsByType(RecombeeDBType db, String itemType) {
+		return StorageService.getItemByType(db,itemType);
 	}
 	
 }

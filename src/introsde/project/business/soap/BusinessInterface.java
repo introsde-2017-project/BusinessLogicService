@@ -68,6 +68,19 @@ public interface BusinessInterface {
 			@WebParam(name="itemName") String itemName
 			);
 	
+	@WebMethod(operationName="getAllItem")
+    @WebResult(name="ListofStrings") 
+	public List<String> getAllItem(
+			@WebParam(name="dbName") RecombeeDBType db
+			);
+	
+	@WebMethod(operationName="getItemsByType")
+    @WebResult(name="ListofStrings") 
+	public List<String> getItemsByType(
+			@WebParam(name="dbName") RecombeeDBType db,
+			@WebParam(name="itemName") String itemType
+			);
+	
 	
 	@WebMethod(operationName="addNewRating")
     @WebResult(name="boolean") 
