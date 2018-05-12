@@ -92,5 +92,10 @@ public class BusinessImpl implements BusinessInterface {
 	public List<String> getItemsByType(RecombeeDBType db, String itemType) {
 		return StorageService.getItemByType(db,itemType);
 	}
+
+	@Override
+	public List<Person> getAllPerson() {
+		return StorageService.getAllUser();
+	}
 	
 }

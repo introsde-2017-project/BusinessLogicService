@@ -74,5 +74,9 @@ public class StorageService {
 		return serviceInt.getItemByType(db, itemType);
 	}
 
+	public static List<Person> getAllUser() {
+		return serviceInt.getAllUser();
+	}
+
 	
 }
