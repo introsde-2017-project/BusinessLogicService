@@ -1,8 +1,6 @@
 package introsde.project.business.model;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import introsde.project.adopter.recombee.soap.*;
 import introsde.project.data.local.soap.*;
@@ -33,9 +31,8 @@ public class StorageService {
 		return serviceInt.updateUser(person);
 	}
 
-	@SuppressWarnings("unchecked")
-	public static Map<String,Object> getItem(RecombeeDBType db, String itemName) {
-		return (Map<String, Object>) serviceInt.getItem(db, itemName);
+	public static ItemObject getItem(RecombeeDBType db, String itemName) {
+		return serviceInt.getItem(db, itemName);
 	}
 
 	public static List<String> getRecom(RecombeeDBType db, Person person, int quantity) {
@@ -46,12 +43,12 @@ public class StorageService {
 		return serviceInt.addNewItem(db, itemName, itemType, location);
 	}
 
-	public static boolean addRating(RecombeeDBType db, String itemName, Person person, double rating, Date time) {
-		return serviceInt.addNewRating(db, person, itemName, rating, DateToXML.GregorianCalendar(time));
+	public static boolean addRating(RecombeeDBType db, Evaluation rating) {
+		return serviceInt.addNewRating(db, rating);
 	}
 
-	public static boolean modifyRating(RecombeeDBType db, String itemName, Person person, double rating, Date time) {
-		return serviceInt.modifyRating(db, person, itemName, rating, DateToXML.GregorianCalendar(time));
+	public static boolean modifyRating(RecombeeDBType db, Evaluation rating) {
+		return serviceInt.modifyRating(db, rating);
 	}
 
 	public static List<Evaluation> getItemRatings(RecombeeDBType db, String itemName) {

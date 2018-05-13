@@ -37,4 +37,12 @@ public class ObjectFactory {
         return new Evaluation();
     }
 
+    /**
+     * Create an instance of {@link ItemObject }
+     * 
+     */
+    public ItemObject createItemObject() {
+        return new ItemObject();
+    }
+
 }

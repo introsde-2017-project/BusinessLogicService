@@ -1,12 +1,11 @@
 package introsde.project.business.soap;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import javax.jws.WebService;
 
 import introsde.project.adopter.recombee.soap.Evaluation;
+import introsde.project.adopter.recombee.soap.ItemObject;
 import introsde.project.adopter.recombee.soap.RecombeeDBType;
 import introsde.project.business.model.StorageService;
 import introsde.project.data.local.soap.FoodType;
@@ -53,13 +52,13 @@ public class BusinessImpl implements BusinessInterface {
 	}
 
 	@Override
-	public boolean addNewRating(RecombeeDBType db, Person person, String itemName, double rating, Date time) {
-		return StorageService.addRating(db,itemName, person, rating, time);
+	public boolean addNewRating(RecombeeDBType db, Evaluation rating) {
+		return StorageService.addRating(db, rating);
 	}
 
 	@Override
-	public boolean modifyRating(RecombeeDBType db, Person person, String itemName, double rating, Date time) {
-		return StorageService.modifyRating(db,itemName, person, rating, time);
+	public boolean modifyRating(RecombeeDBType db, Evaluation rating) {
+		return StorageService.modifyRating(db,rating);
 	}
 
 	@Override
@@ -79,7 +78,7 @@ public class BusinessImpl implements BusinessInterface {
 	}
 
 	@Override
-	public Map<String, Object> getItem(RecombeeDBType db, String itemName) {
+	public ItemObject getItem(RecombeeDBType db, String itemName) {
 		return StorageService.getItem(db,itemName);
 	}
 

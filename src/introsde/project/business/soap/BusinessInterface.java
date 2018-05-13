@@ -1,8 +1,6 @@
 package introsde.project.business.soap;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -13,6 +11,7 @@ import javax.jws.soap.SOAPBinding.Style;
 import javax.jws.soap.SOAPBinding.Use;
 
 import introsde.project.adopter.recombee.soap.Evaluation;
+import introsde.project.adopter.recombee.soap.ItemObject;
 import introsde.project.adopter.recombee.soap.RecombeeDBType;
 import introsde.project.data.local.soap.FoodType;
 import introsde.project.data.local.soap.MovieGen;
@@ -66,8 +65,8 @@ public interface BusinessInterface {
 			);	
 	
 	@WebMethod(operationName="getItem")
-    @WebResult(name="ListofPropertiesofItem") 
-	public Map<String, Object> getItem(
+    @WebResult(name="ItemObject") 
+	public ItemObject getItem(
 			@WebParam(name="dbName") RecombeeDBType db,
 			@WebParam(name="itemName") String itemName
 			);
@@ -90,20 +89,14 @@ public interface BusinessInterface {
     @WebResult(name="boolean") 
     public boolean addNewRating(
     		@WebParam(name="dbName") RecombeeDBType db,
-    		@WebParam(name="person") Person person,
-    		@WebParam(name="itemName") String itemName,
-    		@WebParam(name="rating") double rating,
-    		@WebParam(name="time") Date time
+    		@WebParam(name="rating") Evaluation rating
     		);
 	
 	@WebMethod(operationName="modifyRating")
     @WebResult(name="boolean") 
     public boolean modifyRating(
     		@WebParam(name="dbName") RecombeeDBType db,
-    		@WebParam(name="person") Person person,
-    		@WebParam(name="itemName") String itemName,
-    		@WebParam(name="rating") double rating,
-    		@WebParam(name="time") Date time
+    		@WebParam(name="rating") Evaluation rating
     		);
 	
 	@WebMethod(operationName="getItemRatings")
