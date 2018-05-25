@@ -19,13 +19,14 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="birthDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="firstName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="foodTypes" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="idPerson" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="lastName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="movieGens" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="token" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="userName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -37,18 +38,19 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "person", propOrder = {
-    "birthDate",
+    "email",
     "firstName",
     "foodTypes",
     "idPerson",
     "lastName",
     "movieGens",
     "password",
+    "token",
     "userName"
 })
 public class Person {
 
-    protected String birthDate;
+    protected String email;
     protected String firstName;
     @XmlElement(nillable = true)
     protected List<String> foodTypes;
@@ -57,30 +59,31 @@ public class Person {
     @XmlElement(nillable = true)
     protected List<String> movieGens;
     protected String password;
+    protected String token;
     protected String userName;
 
     /**
-     * Gets the value of the birthDate property.
+     * Gets the value of the email property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getBirthDate() {
-        return birthDate;
+    public String getEmail() {
+        return email;
     }
 
     /**
-     * Sets the value of the birthDate property.
+     * Sets the value of the email property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setBirthDate(String value) {
-        this.birthDate = value;
+    public void setEmail(String value) {
+        this.email = value;
     }
 
     /**
@@ -227,6 +230,30 @@ public class Person {
      */
     public void setPassword(String value) {
         this.password = value;
+    }
+
+    /**
+     * Gets the value of the token property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getToken() {
+        return token;
+    }
+
+    /**
+     * Sets the value of the token property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setToken(String value) {
+        this.token = value;
     }
 
     /**
