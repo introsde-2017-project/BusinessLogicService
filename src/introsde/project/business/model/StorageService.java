@@ -75,5 +75,9 @@ public class StorageService {
 		return serviceInt.getAllUser();
 	}
 
+	public static Person getPersonByToken(String token) {
+		return serviceInt.getPersonByToken(token);
+	}
+
 	
 }

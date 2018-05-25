@@ -96,5 +96,10 @@ public class BusinessImpl implements BusinessInterface {
 	public List<Person> getAllPerson() {
 		return StorageService.getAllUser();
 	}
+
+	@Override
+	public Person getPersonByToken(String token) {
+		return StorageService.getPersonByToken(token);
+	}
 	
 }

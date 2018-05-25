@@ -33,6 +33,7 @@ public class ObjectFactory {
     private final static QName _GetUser_QNAME = new QName("http://soap.storage.project.introsde/", "getUser");
     private final static QName _AddNewItemResponse_QNAME = new QName("http://soap.storage.project.introsde/", "addNewItemResponse");
     private final static QName _GetRec4UserResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getRec4UserResponse");
+    private final static QName _GetPersonByTokenResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getPersonByTokenResponse");
     private final static QName _UpdateUserResponse_QNAME = new QName("http://soap.storage.project.introsde/", "updateUserResponse");
     private final static QName _GetFoodTypesResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getFoodTypesResponse");
     private final static QName _AddNewRatingResponse_QNAME = new QName("http://soap.storage.project.introsde/", "addNewRatingResponse");
@@ -49,6 +50,7 @@ public class ObjectFactory {
     private final static QName _GetMovieGensResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getMovieGensResponse");
     private final static QName _GetRec4User_QNAME = new QName("http://soap.storage.project.introsde/", "getRec4User");
     private final static QName _ResetDBResponse_QNAME = new QName("http://soap.storage.project.introsde/", "resetDBResponse");
+    private final static QName _GetPersonByToken_QNAME = new QName("http://soap.storage.project.introsde/", "getPersonByToken");
     private final static QName _InitDB_QNAME = new QName("http://soap.storage.project.introsde/", "initDB");
     private final static QName _GetFoodTypes_QNAME = new QName("http://soap.storage.project.introsde/", "getFoodTypes");
     private final static QName _ModifyRating_QNAME = new QName("http://soap.storage.project.introsde/", "modifyRating");
@@ -171,6 +173,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetPersonByTokenResponse }
+     * 
+     */
+    public GetPersonByTokenResponse createGetPersonByTokenResponse() {
+        return new GetPersonByTokenResponse();
+    }
+
+    /**
      * Create an instance of {@link GetRec4UserResponse }
      * 
      */
@@ -192,6 +202,14 @@ public class ObjectFactory {
      */
     public GetFoodTypes createGetFoodTypes() {
         return new GetFoodTypes();
+    }
+
+    /**
+     * Create an instance of {@link GetPersonByToken }
+     * 
+     */
+    public GetPersonByToken createGetPersonByToken() {
+        return new GetPersonByToken();
     }
 
     /**
@@ -420,6 +438,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetPersonByTokenResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getPersonByTokenResponse")
+    public JAXBElement<GetPersonByTokenResponse> createGetPersonByTokenResponse(GetPersonByTokenResponse value) {
+        return new JAXBElement<GetPersonByTokenResponse>(_GetPersonByTokenResponse_QNAME, GetPersonByTokenResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link UpdateUserResponse }{@code >}}
      * 
      */
@@ -561,6 +588,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "resetDBResponse")
     public JAXBElement<ResetDBResponse> createResetDBResponse(ResetDBResponse value) {
         return new JAXBElement<ResetDBResponse>(_ResetDBResponse_QNAME, ResetDBResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetPersonByToken }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getPersonByToken")
+    public JAXBElement<GetPersonByToken> createGetPersonByToken(GetPersonByToken value) {
+        return new JAXBElement<GetPersonByToken>(_GetPersonByToken_QNAME, GetPersonByToken.class, null, value);
     }
 
     /**
