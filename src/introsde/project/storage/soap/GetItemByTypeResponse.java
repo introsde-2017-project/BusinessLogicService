@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import introsde.project.adopter.recombee.soap.ItemObject;
 
 
 /**
@@ -19,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="ListofStrings" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="ListofStrings" type="{http://soap.recombee.adopter.project.introsde/}itemObject" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,7 +36,7 @@ import javax.xml.bind.annotation.XmlType;
 public class GetItemByTypeResponse {
 
     @XmlElement(name = "ListofStrings")
-    protected List<String> listofStrings;
+    protected List<ItemObject> listofStrings;
 
     /**
      * Gets the value of the listofStrings property.
@@ -55,13 +56,13 @@ public class GetItemByTypeResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * {@link ItemObject }
      * 
      * 
      */
-    public List<String> getListofStrings() {
+    public List<ItemObject> getListofStrings() {
         if (listofStrings == null) {
-            listofStrings = new ArrayList<String>();
+            listofStrings = new ArrayList<ItemObject>();
         }
         return this.listofStrings;
     }

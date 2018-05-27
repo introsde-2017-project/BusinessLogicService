@@ -35,11 +35,11 @@ public class StorageService {
 		return serviceInt.getItem(db, itemName);
 	}
 
-	public static List<String> getRecom(RecombeeDBType db, Person person, int quantity) {
+	public static List<ItemObject> getRecom(RecombeeDBType db, Person person, int quantity) {
 		return serviceInt.getRec4User(db, person, quantity);
 	}
 
-	public static String addNewItem(RecombeeDBType db, String itemName, String itemType, String location) {
+	public static ItemObject addNewItem(RecombeeDBType db, String itemName, String itemType, String location) {
 		return serviceInt.addNewItem(db, itemName, itemType, location);
 	}
 
@@ -63,11 +63,11 @@ public class StorageService {
 		return serviceInt.initDB(db);
 	}
 
-	public static List<String> getAllItem(RecombeeDBType db) {
+	public static List<ItemObject> getAllItem(RecombeeDBType db) {
 		return serviceInt.getAllItem(db);
 	}
 
-	public static List<String> getItemByType(RecombeeDBType db, String itemType) {
+	public static List<ItemObject> getItemByType(RecombeeDBType db, String itemType) {
 		return serviceInt.getItemByType(db, itemType);
 	}
 

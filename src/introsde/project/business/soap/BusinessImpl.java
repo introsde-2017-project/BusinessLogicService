@@ -47,7 +47,7 @@ public class BusinessImpl implements BusinessInterface {
 	}
 
 	@Override
-	public String addNewItem(RecombeeDBType db, String itemName, String itemType, String location) {
+	public ItemObject addNewItem(RecombeeDBType db, String itemName, String itemType, String location) {
 		return StorageService.addNewItem(db,itemName, itemType, location);
 	}
 
@@ -72,7 +72,7 @@ public class BusinessImpl implements BusinessInterface {
 	}
 
 	@Override
-	public List<String> getRecommendations(RecombeeDBType db, Person person, int quantity) {	
+	public List<ItemObject> getRecommendations(RecombeeDBType db, Person person, int quantity) {	
 		return StorageService.getRecom(db,person, quantity);
 		
 	}
@@ -83,12 +83,12 @@ public class BusinessImpl implements BusinessInterface {
 	}
 
 	@Override
-	public List<String> getAllItem(RecombeeDBType db) {
+	public List<ItemObject> getAllItem(RecombeeDBType db) {
 		return StorageService.getAllItem(db);
 	}
 
 	@Override
-	public List<String> getItemsByType(RecombeeDBType db, String itemType) {
+	public List<ItemObject> getItemsByType(RecombeeDBType db, String itemType) {
 		return StorageService.getItemByType(db,itemType);
 	}
 

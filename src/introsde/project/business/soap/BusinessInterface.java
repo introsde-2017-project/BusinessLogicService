@@ -62,7 +62,7 @@ public interface BusinessInterface {
 	
 	@WebMethod(operationName="addNewItem")
     @WebResult(name="StringId") 
-	public String addNewItem(
+	public ItemObject addNewItem(
 			@WebParam(name="dbName") RecombeeDBType db,
 			@WebParam(name="itemName") String itemName,
 			@WebParam(name="itemType") String itemType,
@@ -78,13 +78,13 @@ public interface BusinessInterface {
 	
 	@WebMethod(operationName="getAllItem")
     @WebResult(name="ListofStrings") 
-	public List<String> getAllItem(
+	public List<ItemObject> getAllItem(
 			@WebParam(name="dbName") RecombeeDBType db
 			);
 	
 	@WebMethod(operationName="getItemsByType")
     @WebResult(name="ListofStrings") 
-	public List<String> getItemsByType(
+	public List<ItemObject> getItemsByType(
 			@WebParam(name="dbName") RecombeeDBType db,
 			@WebParam(name="itemName") String itemType
 			);
@@ -120,7 +120,7 @@ public interface BusinessInterface {
 	
 	@WebMethod(operationName="getRecommendations")
     @WebResult(name="recommendations") 
-    public List<String> getRecommendations(
+    public List<ItemObject> getRecommendations(
     		@WebParam(name="dbName") RecombeeDBType db,
     		@WebParam(name="person") Person person,
     		@WebParam(name="quantity") int quantity
