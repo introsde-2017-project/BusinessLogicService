@@ -204,14 +204,14 @@ public interface StorageInterface {
      * @param person
      * @param dbName
      * @return
-     *     returns java.util.List<java.lang.String>
+     *     returns java.util.List<introsde.project.adopter.recombee.soap.ItemObject>
      */
     @WebMethod
     @WebResult(name = "recommendations", targetNamespace = "")
     @RequestWrapper(localName = "getRec4User", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetRec4User")
     @ResponseWrapper(localName = "getRec4UserResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetRec4UserResponse")
     @Action(input = "http://soap.storage.project.introsde/StorageInterface/getRec4UserRequest", output = "http://soap.storage.project.introsde/StorageInterface/getRec4UserResponse")
-    public List<String> getRec4User(
+    public List<ItemObject> getRec4User(
         @WebParam(name = "dbName", targetNamespace = "")
         RecombeeDBType dbName,
         @WebParam(name = "person", targetNamespace = "")
