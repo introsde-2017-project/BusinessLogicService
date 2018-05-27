@@ -35,7 +35,7 @@ public class StorageService {
 		return serviceInt.getItem(db, itemName);
 	}
 
-	public static List<ItemObject> getRecom(RecombeeDBType db, Person person, int quantity) {
+	public static List<String> getRecom(RecombeeDBType db, Person person, int quantity) {
 		return serviceInt.getRec4User(db, person, quantity);
 	}
 

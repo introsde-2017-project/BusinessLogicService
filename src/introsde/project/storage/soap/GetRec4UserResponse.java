@@ -6,7 +6,6 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-import introsde.project.adopter.recombee.soap.ItemObject;
 
 
 /**
@@ -19,7 +18,7 @@ import introsde.project.adopter.recombee.soap.ItemObject;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="recommendations" type="{http://soap.recombee.adopter.project.introsde/}itemObject" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="recommendations" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -34,7 +33,7 @@ import introsde.project.adopter.recombee.soap.ItemObject;
 })
 public class GetRec4UserResponse {
 
-    protected List<ItemObject> recommendations;
+    protected List<String> recommendations;
 
     /**
      * Gets the value of the recommendations property.
@@ -54,13 +53,13 @@ public class GetRec4UserResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link ItemObject }
+     * {@link String }
      * 
      * 
      */
-    public List<ItemObject> getRecommendations() {
+    public List<String> getRecommendations() {
         if (recommendations == null) {
-            recommendations = new ArrayList<ItemObject>();
+            recommendations = new ArrayList<String>();
         }
         return this.recommendations;
     }

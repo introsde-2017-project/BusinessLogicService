@@ -120,7 +120,7 @@ public interface BusinessInterface {
 	
 	@WebMethod(operationName="getRecommendations")
     @WebResult(name="recommendations") 
-    public List<ItemObject> getRecommendations(
+    public List<String> getRecommendations(
     		@WebParam(name="dbName") RecombeeDBType db,
     		@WebParam(name="person") Person person,
     		@WebParam(name="quantity") int quantity

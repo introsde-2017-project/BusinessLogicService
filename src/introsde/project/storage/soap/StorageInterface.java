@@ -35,6 +35,75 @@ public interface StorageInterface {
 
     /**
      * 
+     * @param person
+     * @return
+     *     returns introsde.project.data.local.soap.Person
+     */
+    @WebMethod
+    @WebResult(name = "Person", targetNamespace = "")
+    @RequestWrapper(localName = "addNewUser", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.AddNewUser")
+    @ResponseWrapper(localName = "addNewUserResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.AddNewUserResponse")
+    @Action(input = "http://soap.storage.project.introsde/StorageInterface/addNewUserRequest", output = "http://soap.storage.project.introsde/StorageInterface/addNewUserResponse")
+    public Person addNewUser(
+        @WebParam(name = "person", targetNamespace = "")
+        Person person);
+
+    /**
+     * 
+     * @param username
+     * @return
+     *     returns introsde.project.data.local.soap.Person
+     */
+    @WebMethod
+    @WebResult(name = "Person", targetNamespace = "")
+    @RequestWrapper(localName = "getUser", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetUser")
+    @ResponseWrapper(localName = "getUserResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetUserResponse")
+    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getUserRequest", output = "http://soap.storage.project.introsde/StorageInterface/getUserResponse")
+    public Person getUser(
+        @WebParam(name = "username", targetNamespace = "")
+        String username);
+
+    /**
+     * 
+     * @param person
+     * @return
+     *     returns introsde.project.data.local.soap.Person
+     */
+    @WebMethod
+    @WebResult(name = "Person", targetNamespace = "")
+    @RequestWrapper(localName = "updateUser", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.UpdateUser")
+    @ResponseWrapper(localName = "updateUserResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.UpdateUserResponse")
+    @Action(input = "http://soap.storage.project.introsde/StorageInterface/updateUserRequest", output = "http://soap.storage.project.introsde/StorageInterface/updateUserResponse")
+    public Person updateUser(
+        @WebParam(name = "person", targetNamespace = "")
+        Person person);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<introsde.project.data.local.soap.FoodType>
+     */
+    @WebMethod
+    @WebResult(name = "FoodTypeList", targetNamespace = "")
+    @RequestWrapper(localName = "getFoodTypes", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetFoodTypes")
+    @ResponseWrapper(localName = "getFoodTypesResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetFoodTypesResponse")
+    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getFoodTypesRequest", output = "http://soap.storage.project.introsde/StorageInterface/getFoodTypesResponse")
+    public List<FoodType> getFoodTypes();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<introsde.project.data.local.soap.MovieGen>
+     */
+    @WebMethod
+    @WebResult(name = "MovieGenList", targetNamespace = "")
+    @RequestWrapper(localName = "getMovieGens", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetMovieGens")
+    @ResponseWrapper(localName = "getMovieGensResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetMovieGensResponse")
+    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getMovieGensRequest", output = "http://soap.storage.project.introsde/StorageInterface/getMovieGensResponse")
+    public List<MovieGen> getMovieGens();
+
+    /**
+     * 
      * @param itemName
      * @param itemType
      * @param dbName
@@ -56,21 +125,6 @@ public interface StorageInterface {
         String itemType,
         @WebParam(name = "location", targetNamespace = "")
         String location);
-
-    /**
-     * 
-     * @param person
-     * @return
-     *     returns introsde.project.data.local.soap.Person
-     */
-    @WebMethod
-    @WebResult(name = "Person", targetNamespace = "")
-    @RequestWrapper(localName = "addNewUser", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.AddNewUser")
-    @ResponseWrapper(localName = "addNewUserResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.AddNewUserResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/addNewUserRequest", output = "http://soap.storage.project.introsde/StorageInterface/addNewUserResponse")
-    public Person addNewUser(
-        @WebParam(name = "person", targetNamespace = "")
-        Person person);
 
     /**
      * 
@@ -150,14 +204,14 @@ public interface StorageInterface {
      * @param person
      * @param dbName
      * @return
-     *     returns java.util.List<introsde.project.adopter.recombee.soap.ItemObject>
+     *     returns java.util.List<java.lang.String>
      */
     @WebMethod
     @WebResult(name = "recommendations", targetNamespace = "")
     @RequestWrapper(localName = "getRec4User", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetRec4User")
     @ResponseWrapper(localName = "getRec4UserResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetRec4UserResponse")
     @Action(input = "http://soap.storage.project.introsde/StorageInterface/getRec4UserRequest", output = "http://soap.storage.project.introsde/StorageInterface/getRec4UserResponse")
-    public List<ItemObject> getRec4User(
+    public List<String> getRec4User(
         @WebParam(name = "dbName", targetNamespace = "")
         RecombeeDBType dbName,
         @WebParam(name = "person", targetNamespace = "")
@@ -227,60 +281,6 @@ public interface StorageInterface {
     public boolean resetDB(
         @WebParam(name = "dbName", targetNamespace = "")
         RecombeeDBType dbName);
-
-    /**
-     * 
-     * @param username
-     * @return
-     *     returns introsde.project.data.local.soap.Person
-     */
-    @WebMethod
-    @WebResult(name = "Person", targetNamespace = "")
-    @RequestWrapper(localName = "getUser", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetUser")
-    @ResponseWrapper(localName = "getUserResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetUserResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getUserRequest", output = "http://soap.storage.project.introsde/StorageInterface/getUserResponse")
-    public Person getUser(
-        @WebParam(name = "username", targetNamespace = "")
-        String username);
-
-    /**
-     * 
-     * @param person
-     * @return
-     *     returns introsde.project.data.local.soap.Person
-     */
-    @WebMethod
-    @WebResult(name = "Person", targetNamespace = "")
-    @RequestWrapper(localName = "updateUser", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.UpdateUser")
-    @ResponseWrapper(localName = "updateUserResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.UpdateUserResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/updateUserRequest", output = "http://soap.storage.project.introsde/StorageInterface/updateUserResponse")
-    public Person updateUser(
-        @WebParam(name = "person", targetNamespace = "")
-        Person person);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<introsde.project.data.local.soap.FoodType>
-     */
-    @WebMethod
-    @WebResult(name = "FoodTypeList", targetNamespace = "")
-    @RequestWrapper(localName = "getFoodTypes", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetFoodTypes")
-    @ResponseWrapper(localName = "getFoodTypesResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetFoodTypesResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getFoodTypesRequest", output = "http://soap.storage.project.introsde/StorageInterface/getFoodTypesResponse")
-    public List<FoodType> getFoodTypes();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<introsde.project.data.local.soap.MovieGen>
-     */
-    @WebMethod
-    @WebResult(name = "MovieGenList", targetNamespace = "")
-    @RequestWrapper(localName = "getMovieGens", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetMovieGens")
-    @ResponseWrapper(localName = "getMovieGensResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetMovieGensResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getMovieGensRequest", output = "http://soap.storage.project.introsde/StorageInterface/getMovieGensResponse")
-    public List<MovieGen> getMovieGens();
 
     /**
      * 
