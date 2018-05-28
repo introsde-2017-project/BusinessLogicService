@@ -20,7 +20,6 @@ public class BusinessImpl implements BusinessInterface {
 		StorageService.initDB(RecombeeDBType.FOOD_DB);
 		StorageService.initDB(RecombeeDBType.MOVIE_DB);
 	}
-
 	@Override
 	public Person addNewPerson(Person person) {
 		return StorageService.addNewPerson(person);
