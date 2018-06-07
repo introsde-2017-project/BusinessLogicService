@@ -60,21 +60,21 @@ public interface BusinessInterface {
 	
 	///////recombee DB
 	
-	@WebMethod(operationName="addNewItem")
-    @WebResult(name="StringId") 
-	public ItemObject addNewItem(
-			@WebParam(name="dbName") RecombeeDBType db,
-			@WebParam(name="itemName") String itemName,
-			@WebParam(name="itemType") String itemType,
-			@WebParam(name="location") String location
-			);	
+//	@WebMethod(operationName="addNewItem")
+//    @WebResult(name="StringId") 
+//	public ItemObject addNewItem(
+//			@WebParam(name="dbName") RecombeeDBType db,
+//			@WebParam(name="itemName") String itemName,
+//			@WebParam(name="itemType") String itemType,
+//			@WebParam(name="location") String location
+//			);	
 	
-	@WebMethod(operationName="getItem")
-    @WebResult(name="ItemObject") 
-	public ItemObject getItem(
-			@WebParam(name="dbName") RecombeeDBType db,
-			@WebParam(name="itemName") String itemName
-			);
+//	@WebMethod(operationName="getItem")
+//    @WebResult(name="ItemObject") 
+//	public ItemObject getItem(
+//			@WebParam(name="dbName") RecombeeDBType db,
+//			@WebParam(name="itemName") String itemName
+//			);
 	
 	@WebMethod(operationName="getAllItem")
     @WebResult(name="ListofStrings") 
@@ -97,12 +97,12 @@ public interface BusinessInterface {
     		@WebParam(name="rating") Evaluation rating
     		);
 	
-	@WebMethod(operationName="modifyRating")
-    @WebResult(name="boolean") 
-    public boolean modifyRating(
-    		@WebParam(name="dbName") RecombeeDBType db,
-    		@WebParam(name="rating") Evaluation rating
-    		);
+//	@WebMethod(operationName="modifyRating")
+//    @WebResult(name="boolean") 
+//    public boolean modifyRating(
+//    		@WebParam(name="dbName") RecombeeDBType db,
+//    		@WebParam(name="rating") Evaluation rating
+//    		);
 	
 	@WebMethod(operationName="getItemRatings")
     @WebResult(name="ratingList") 

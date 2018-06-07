@@ -51,6 +51,57 @@ public interface StorageInterface {
     /**
      * 
      * @param person
+     * @param dbName
+     * @return
+     *     returns java.util.List<introsde.project.adopter.recombee.soap.Evaluation>
+     */
+    @WebMethod
+    @WebResult(name = "ratingList", targetNamespace = "")
+    @RequestWrapper(localName = "getUserRatings", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetUserRatings")
+    @ResponseWrapper(localName = "getUserRatingsResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetUserRatingsResponse")
+    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getUserRatingsRequest", output = "http://soap.storage.project.introsde/StorageInterface/getUserRatingsResponse")
+    public List<Evaluation> getUserRatings(
+        @WebParam(name = "dbName", targetNamespace = "")
+        RecombeeDBType dbName,
+        @WebParam(name = "person", targetNamespace = "")
+        Person person);
+
+    /**
+     * 
+     * @param dbName
+     * @return
+     *     returns java.util.List<introsde.project.adopter.recombee.soap.ItemObject>
+     */
+    @WebMethod
+    @WebResult(name = "ListofStrings", targetNamespace = "")
+    @RequestWrapper(localName = "getAllItem", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetAllItem")
+    @ResponseWrapper(localName = "getAllItemResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetAllItemResponse")
+    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getAllItemRequest", output = "http://soap.storage.project.introsde/StorageInterface/getAllItemResponse")
+    public List<ItemObject> getAllItem(
+        @WebParam(name = "dbName", targetNamespace = "")
+        RecombeeDBType dbName);
+
+    /**
+     * 
+     * @param itemName
+     * @param dbName
+     * @return
+     *     returns java.util.List<introsde.project.adopter.recombee.soap.Evaluation>
+     */
+    @WebMethod
+    @WebResult(name = "ratingList", targetNamespace = "")
+    @RequestWrapper(localName = "getItemRatings", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetItemRatings")
+    @ResponseWrapper(localName = "getItemRatingsResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetItemRatingsResponse")
+    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getItemRatingsRequest", output = "http://soap.storage.project.introsde/StorageInterface/getItemRatingsResponse")
+    public List<Evaluation> getItemRatings(
+        @WebParam(name = "dbName", targetNamespace = "")
+        RecombeeDBType dbName,
+        @WebParam(name = "itemName", targetNamespace = "")
+        String itemName);
+
+    /**
+     * 
+     * @param person
      * @return
      *     returns introsde.project.data.local.soap.Person
      */
@@ -86,60 +137,6 @@ public interface StorageInterface {
     @ResponseWrapper(localName = "getMovieGensResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetMovieGensResponse")
     @Action(input = "http://soap.storage.project.introsde/StorageInterface/getMovieGensRequest", output = "http://soap.storage.project.introsde/StorageInterface/getMovieGensResponse")
     public List<MovieGen> getMovieGens();
-
-    /**
-     * 
-     * @param evaluation
-     * @param dbName
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(name = "boolean", targetNamespace = "")
-    @RequestWrapper(localName = "modifyRating", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.ModifyRating")
-    @ResponseWrapper(localName = "modifyRatingResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.ModifyRatingResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/modifyRatingRequest", output = "http://soap.storage.project.introsde/StorageInterface/modifyRatingResponse")
-    public boolean modifyRating(
-        @WebParam(name = "dbName", targetNamespace = "")
-        RecombeeDBType dbName,
-        @WebParam(name = "evaluation", targetNamespace = "")
-        Evaluation evaluation);
-
-    /**
-     * 
-     * @param itemName
-     * @param dbName
-     * @return
-     *     returns java.util.List<introsde.project.adopter.recombee.soap.Evaluation>
-     */
-    @WebMethod
-    @WebResult(name = "ratingList", targetNamespace = "")
-    @RequestWrapper(localName = "getItemRatings", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetItemRatings")
-    @ResponseWrapper(localName = "getItemRatingsResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetItemRatingsResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getItemRatingsRequest", output = "http://soap.storage.project.introsde/StorageInterface/getItemRatingsResponse")
-    public List<Evaluation> getItemRatings(
-        @WebParam(name = "dbName", targetNamespace = "")
-        RecombeeDBType dbName,
-        @WebParam(name = "itemName", targetNamespace = "")
-        String itemName);
-
-    /**
-     * 
-     * @param person
-     * @param dbName
-     * @return
-     *     returns java.util.List<introsde.project.adopter.recombee.soap.Evaluation>
-     */
-    @WebMethod
-    @WebResult(name = "ratingList", targetNamespace = "")
-    @RequestWrapper(localName = "getUserRatings", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetUserRatings")
-    @ResponseWrapper(localName = "getUserRatingsResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetUserRatingsResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getUserRatingsRequest", output = "http://soap.storage.project.introsde/StorageInterface/getUserRatingsResponse")
-    public List<Evaluation> getUserRatings(
-        @WebParam(name = "dbName", targetNamespace = "")
-        RecombeeDBType dbName,
-        @WebParam(name = "person", targetNamespace = "")
-        Person person);
 
     /**
      * 
@@ -186,26 +183,35 @@ public interface StorageInterface {
     /**
      * 
      * @param itemName
-     * @param itemType
      * @param dbName
-     * @param location
      * @return
-     *     returns introsde.project.adopter.recombee.soap.ItemObject
+     *     returns java.util.List<introsde.project.adopter.recombee.soap.ItemObject>
      */
     @WebMethod
-    @WebResult(name = "itemId", targetNamespace = "")
-    @RequestWrapper(localName = "addNewItem", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.AddNewItem")
-    @ResponseWrapper(localName = "addNewItemResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.AddNewItemResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/addNewItemRequest", output = "http://soap.storage.project.introsde/StorageInterface/addNewItemResponse")
-    public ItemObject addNewItem(
+    @WebResult(name = "ListofStrings", targetNamespace = "")
+    @RequestWrapper(localName = "getItemByType", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetItemByType")
+    @ResponseWrapper(localName = "getItemByTypeResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetItemByTypeResponse")
+    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getItemByTypeRequest", output = "http://soap.storage.project.introsde/StorageInterface/getItemByTypeResponse")
+    public List<ItemObject> getItemByType(
         @WebParam(name = "dbName", targetNamespace = "")
         RecombeeDBType dbName,
         @WebParam(name = "itemName", targetNamespace = "")
-        String itemName,
-        @WebParam(name = "itemType", targetNamespace = "")
-        String itemType,
-        @WebParam(name = "location", targetNamespace = "")
-        String location);
+        String itemName);
+
+    /**
+     * 
+     * @param dbName
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(name = "boolean", targetNamespace = "")
+    @RequestWrapper(localName = "initDB", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.InitDB")
+    @ResponseWrapper(localName = "initDBResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.InitDBResponse")
+    @Action(input = "http://soap.storage.project.introsde/StorageInterface/initDBRequest", output = "http://soap.storage.project.introsde/StorageInterface/initDBResponse")
+    public boolean initDB(
+        @WebParam(name = "dbName", targetNamespace = "")
+        RecombeeDBType dbName);
 
     /**
      * 
@@ -245,86 +251,5 @@ public interface StorageInterface {
         Person person,
         @WebParam(name = "quantity", targetNamespace = "")
         int quantity);
-
-    /**
-     * 
-     * @param itemName
-     * @param dbName
-     * @return
-     *     returns java.util.List<introsde.project.adopter.recombee.soap.ItemObject>
-     */
-    @WebMethod
-    @WebResult(name = "ListofStrings", targetNamespace = "")
-    @RequestWrapper(localName = "getItemByType", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetItemByType")
-    @ResponseWrapper(localName = "getItemByTypeResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetItemByTypeResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getItemByTypeRequest", output = "http://soap.storage.project.introsde/StorageInterface/getItemByTypeResponse")
-    public List<ItemObject> getItemByType(
-        @WebParam(name = "dbName", targetNamespace = "")
-        RecombeeDBType dbName,
-        @WebParam(name = "itemName", targetNamespace = "")
-        String itemName);
-
-    /**
-     * 
-     * @param dbName
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(name = "boolean", targetNamespace = "")
-    @RequestWrapper(localName = "initDB", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.InitDB")
-    @ResponseWrapper(localName = "initDBResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.InitDBResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/initDBRequest", output = "http://soap.storage.project.introsde/StorageInterface/initDBResponse")
-    public boolean initDB(
-        @WebParam(name = "dbName", targetNamespace = "")
-        RecombeeDBType dbName);
-
-    /**
-     * 
-     * @param dbName
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(name = "boolean", targetNamespace = "")
-    @RequestWrapper(localName = "resetDB", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.ResetDB")
-    @ResponseWrapper(localName = "resetDBResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.ResetDBResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/resetDBRequest", output = "http://soap.storage.project.introsde/StorageInterface/resetDBResponse")
-    public boolean resetDB(
-        @WebParam(name = "dbName", targetNamespace = "")
-        RecombeeDBType dbName);
-
-    /**
-     * 
-     * @param dbName
-     * @return
-     *     returns java.util.List<introsde.project.adopter.recombee.soap.ItemObject>
-     */
-    @WebMethod
-    @WebResult(name = "ListofStrings", targetNamespace = "")
-    @RequestWrapper(localName = "getAllItem", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetAllItem")
-    @ResponseWrapper(localName = "getAllItemResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetAllItemResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getAllItemRequest", output = "http://soap.storage.project.introsde/StorageInterface/getAllItemResponse")
-    public List<ItemObject> getAllItem(
-        @WebParam(name = "dbName", targetNamespace = "")
-        RecombeeDBType dbName);
-
-    /**
-     * 
-     * @param itemName
-     * @param dbName
-     * @return
-     *     returns introsde.project.adopter.recombee.soap.ItemObject
-     */
-    @WebMethod
-    @WebResult(name = "ListofPropertiesofItem", targetNamespace = "")
-    @RequestWrapper(localName = "getItem", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetItem")
-    @ResponseWrapper(localName = "getItemResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetItemResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getItemRequest", output = "http://soap.storage.project.introsde/StorageInterface/getItemResponse")
-    public ItemObject getItem(
-        @WebParam(name = "dbName", targetNamespace = "")
-        RecombeeDBType dbName,
-        @WebParam(name = "itemName", targetNamespace = "")
-        String itemName);
 
 }

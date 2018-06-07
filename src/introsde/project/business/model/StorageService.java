@@ -31,25 +31,25 @@ public class StorageService {
 		return serviceInt.updateUser(person);
 	}
 
-	public static ItemObject getItem(RecombeeDBType db, String itemName) {
-		return serviceInt.getItem(db, itemName);
-	}
+//	public static ItemObject getItem(RecombeeDBType db, String itemName) {
+//		return serviceInt.getItem(db, itemName);
+//	}
 
 	public static List<ItemObject> getRecom(RecombeeDBType db, Person person, int quantity) {
 		return serviceInt.getRec4User(db, person, quantity);
 	}
 
-	public static ItemObject addNewItem(RecombeeDBType db, String itemName, String itemType, String location) {
-		return serviceInt.addNewItem(db, itemName, itemType, location);
-	}
+//	public static ItemObject addNewItem(RecombeeDBType db, String itemName, String itemType, String location) {
+//		return serviceInt.addNewItem(db, itemName, itemType, location);
+//	}
 
 	public static boolean addRating(RecombeeDBType db, Evaluation rating) {
 		return serviceInt.addNewRating(db, rating);
 	}
 
-	public static boolean modifyRating(RecombeeDBType db, Evaluation rating) {
-		return serviceInt.modifyRating(db, rating);
-	}
+//	public static boolean modifyRating(RecombeeDBType db, Evaluation rating) {
+//		return serviceInt.modifyRating(db, rating);
+//	}
 
 	public static List<Evaluation> getItemRatings(RecombeeDBType db, String itemName) {
 		return serviceInt.getItemRatings(db, itemName);

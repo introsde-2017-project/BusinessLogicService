@@ -45,20 +45,20 @@ public class BusinessImpl implements BusinessInterface {
 		return StorageService.getMovieGens();
 	}
 
-	@Override
-	public ItemObject addNewItem(RecombeeDBType db, String itemName, String itemType, String location) {
-		return StorageService.addNewItem(db,itemName, itemType, location);
-	}
+//	@Override
+//	public ItemObject addNewItem(RecombeeDBType db, String itemName, String itemType, String location) {
+//		return StorageService.addNewItem(db,itemName, itemType, location);
+//	}
 
 	@Override
 	public boolean addNewRating(RecombeeDBType db, Evaluation rating) {
 		return StorageService.addRating(db, rating);
 	}
 
-	@Override
-	public boolean modifyRating(RecombeeDBType db, Evaluation rating) {
-		return StorageService.modifyRating(db,rating);
-	}
+//	@Override
+//	public boolean modifyRating(RecombeeDBType db, Evaluation rating) {
+//		return StorageService.modifyRating(db,rating);
+//	}
 
 	@Override
 	public List<Evaluation> getItemRatings(RecombeeDBType db, String itemName) {
@@ -76,10 +76,10 @@ public class BusinessImpl implements BusinessInterface {
 		
 	}
 
-	@Override
-	public ItemObject getItem(RecombeeDBType db, String itemName) {
-		return StorageService.getItem(db,itemName);
-	}
+//	@Override
+//	public ItemObject getItem(RecombeeDBType db, String itemName) {
+//		return StorageService.getItem(db,itemName);
+//	}
 
 	@Override
 	public List<ItemObject> getAllItem(RecombeeDBType db) {
