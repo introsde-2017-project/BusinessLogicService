@@ -60,22 +60,6 @@ public interface BusinessInterface {
 	
 	///////recombee DB
 	
-//	@WebMethod(operationName="addNewItem")
-//    @WebResult(name="StringId") 
-//	public ItemObject addNewItem(
-//			@WebParam(name="dbName") RecombeeDBType db,
-//			@WebParam(name="itemName") String itemName,
-//			@WebParam(name="itemType") String itemType,
-//			@WebParam(name="location") String location
-//			);	
-	
-//	@WebMethod(operationName="getItem")
-//    @WebResult(name="ItemObject") 
-//	public ItemObject getItem(
-//			@WebParam(name="dbName") RecombeeDBType db,
-//			@WebParam(name="itemName") String itemName
-//			);
-	
 	@WebMethod(operationName="getAllItem")
     @WebResult(name="ListofStrings") 
 	public List<ItemObject> getAllItem(
