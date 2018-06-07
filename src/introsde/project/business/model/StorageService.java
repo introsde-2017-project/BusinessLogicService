@@ -1,5 +1,6 @@
 package introsde.project.business.model;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import introsde.project.adopter.recombee.soap.*;
@@ -51,19 +52,25 @@ public class StorageService {
 //		return serviceInt.modifyRating(db, rating);
 //	}
 
-	public static List<Evaluation> getItemRatings(RecombeeDBType db, String itemName) {
-		return serviceInt.getItemRatings(db, itemName);
-	}
 
 	public static List<Evaluation> getUserRatings(RecombeeDBType db, Person person) {
-		return serviceInt.getUserRatings(db, person);
+		List<Evaluation> e= new LinkedList<Evaluation>();
+		for(Evaluation ev:serviceInt.getUserRatings(db, person)) {
+			System.out.println(ev.getItemId());
+			double r=ev.getRating();
+			ev.setRating((r*2)+3);
+			e.add(ev);
+		}
+		return e;
 	}
 
 	public static boolean initDB(RecombeeDBType db) {
 		return serviceInt.initDB(db);
 	}
 
+	//TODO add average ratings to each item object by use of get item rating
 	public static List<ItemObject> getAllItem(RecombeeDBType db) {
+		//serviceInt.getItemRatings(db, itemName);
 		return serviceInt.getAllItem(db);
 	}
 

@@ -60,10 +60,10 @@ public class BusinessImpl implements BusinessInterface {
 //		return StorageService.modifyRating(db,rating);
 //	}
 
-	@Override
-	public List<Evaluation> getItemRatings(RecombeeDBType db, String itemName) {
-		return StorageService.getItemRatings(db,itemName);
-	}
+//	@Override
+//	public List<Evaluation> getItemRatings(RecombeeDBType db, String itemName) {
+//		return StorageService.getItemRatings(db,itemName);
+//	}
 
 	@Override
 	public List<Evaluation> getUserRatings(RecombeeDBType db, Person person) {

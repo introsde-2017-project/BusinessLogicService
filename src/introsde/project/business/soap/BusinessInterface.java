@@ -96,20 +96,7 @@ public interface BusinessInterface {
     		@WebParam(name="dbName") RecombeeDBType db,
     		@WebParam(name="rating") Evaluation rating
     		);
-	
-//	@WebMethod(operationName="modifyRating")
-//    @WebResult(name="boolean") 
-//    public boolean modifyRating(
-//    		@WebParam(name="dbName") RecombeeDBType db,
-//    		@WebParam(name="rating") Evaluation rating
-//    		);
-	
-	@WebMethod(operationName="getItemRatings")
-    @WebResult(name="ratingList") 
-    public List<Evaluation> getItemRatings(
-    		@WebParam(name="dbName") RecombeeDBType db,
-    		@WebParam(name="itemName") String itemName
-    		);
+
 	
 	@WebMethod(operationName="getUserRatings")
     @WebResult(name="ratingList") 
