@@ -58,18 +58,12 @@ public class StorageService {
 		return serviceInt.initDB(db);
 	}
 
-	//TODO add average ratings to each item object by use of get item rating
 	public static List<ItemObject> getAllItem(RecombeeDBType db) {
-		//serviceInt.getItemRatings(db, itemName);
 		return serviceInt.getAllItem(db);
 	}
 
 	public static List<ItemObject> getItemByType(RecombeeDBType db, String itemType) {
 		return serviceInt.getItemByType(db, itemType);
-	}
-
-	public static List<Person> getAllUser() {
-		return serviceInt.getAllUser();
 	}
 
 	public static Person getPersonByToken(String token) {

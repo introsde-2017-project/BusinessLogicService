@@ -35,6 +35,21 @@ public interface StorageInterface {
 
     /**
      * 
+     * @param person
+     * @return
+     *     returns introsde.project.data.local.soap.Person
+     */
+    @WebMethod
+    @WebResult(name = "Person", targetNamespace = "")
+    @RequestWrapper(localName = "addNewUser", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.AddNewUser")
+    @ResponseWrapper(localName = "addNewUserResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.AddNewUserResponse")
+    @Action(input = "http://soap.storage.project.introsde/StorageInterface/addNewUserRequest", output = "http://soap.storage.project.introsde/StorageInterface/addNewUserResponse")
+    public Person addNewUser(
+        @WebParam(name = "person", targetNamespace = "")
+        Person person);
+
+    /**
+     * 
      * @param username
      * @return
      *     returns introsde.project.data.local.soap.Person
@@ -47,6 +62,21 @@ public interface StorageInterface {
     public Person getUser(
         @WebParam(name = "username", targetNamespace = "")
         String username);
+
+    /**
+     * 
+     * @param token
+     * @return
+     *     returns introsde.project.data.local.soap.Person
+     */
+    @WebMethod
+    @WebResult(name = "Person", targetNamespace = "")
+    @RequestWrapper(localName = "getPersonByToken", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetPersonByToken")
+    @ResponseWrapper(localName = "getPersonByTokenResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetPersonByTokenResponse")
+    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getPersonByTokenRequest", output = "http://soap.storage.project.introsde/StorageInterface/getPersonByTokenResponse")
+    public Person getPersonByToken(
+        @WebParam(name = "token", targetNamespace = "")
+        String token);
 
     /**
      * 
@@ -137,48 +167,6 @@ public interface StorageInterface {
     @ResponseWrapper(localName = "getMovieGensResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetMovieGensResponse")
     @Action(input = "http://soap.storage.project.introsde/StorageInterface/getMovieGensRequest", output = "http://soap.storage.project.introsde/StorageInterface/getMovieGensResponse")
     public List<MovieGen> getMovieGens();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<introsde.project.data.local.soap.Person>
-     */
-    @WebMethod
-    @WebResult(name = "PersonList", targetNamespace = "")
-    @RequestWrapper(localName = "getAllUser", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetAllUser")
-    @ResponseWrapper(localName = "getAllUserResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetAllUserResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getAllUserRequest", output = "http://soap.storage.project.introsde/StorageInterface/getAllUserResponse")
-    public List<Person> getAllUser();
-
-    /**
-     * 
-     * @param token
-     * @return
-     *     returns introsde.project.data.local.soap.Person
-     */
-    @WebMethod
-    @WebResult(name = "Person", targetNamespace = "")
-    @RequestWrapper(localName = "getPersonByToken", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetPersonByToken")
-    @ResponseWrapper(localName = "getPersonByTokenResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.GetPersonByTokenResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/getPersonByTokenRequest", output = "http://soap.storage.project.introsde/StorageInterface/getPersonByTokenResponse")
-    public Person getPersonByToken(
-        @WebParam(name = "token", targetNamespace = "")
-        String token);
-
-    /**
-     * 
-     * @param person
-     * @return
-     *     returns introsde.project.data.local.soap.Person
-     */
-    @WebMethod
-    @WebResult(name = "Person", targetNamespace = "")
-    @RequestWrapper(localName = "addNewUser", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.AddNewUser")
-    @ResponseWrapper(localName = "addNewUserResponse", targetNamespace = "http://soap.storage.project.introsde/", className = "introsde.project.storage.soap.AddNewUserResponse")
-    @Action(input = "http://soap.storage.project.introsde/StorageInterface/addNewUserRequest", output = "http://soap.storage.project.introsde/StorageInterface/addNewUserResponse")
-    public Person addNewUser(
-        @WebParam(name = "person", targetNamespace = "")
-        Person person);
 
     /**
      * 

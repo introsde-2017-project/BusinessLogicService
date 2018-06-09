@@ -41,7 +41,6 @@ public class ObjectFactory {
     private final static QName _GetItemByType_QNAME = new QName("http://soap.storage.project.introsde/", "getItemByType");
     private final static QName _GetUserRatingsResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getUserRatingsResponse");
     private final static QName _UpdateUser_QNAME = new QName("http://soap.storage.project.introsde/", "updateUser");
-    private final static QName _GetAllUserResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getAllUserResponse");
     private final static QName _GetItemByTypeResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getItemByTypeResponse");
     private final static QName _GetMovieGensResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getMovieGensResponse");
     private final static QName _GetRec4User_QNAME = new QName("http://soap.storage.project.introsde/", "getRec4User");
@@ -49,7 +48,6 @@ public class ObjectFactory {
     private final static QName _InitDB_QNAME = new QName("http://soap.storage.project.introsde/", "initDB");
     private final static QName _GetFoodTypes_QNAME = new QName("http://soap.storage.project.introsde/", "getFoodTypes");
     private final static QName _AddNewRating_QNAME = new QName("http://soap.storage.project.introsde/", "addNewRating");
-    private final static QName _GetAllUser_QNAME = new QName("http://soap.storage.project.introsde/", "getAllUser");
     private final static QName _GetAllItem_QNAME = new QName("http://soap.storage.project.introsde/", "getAllItem");
     private final static QName _GetItemRatingsResponse_QNAME = new QName("http://soap.storage.project.introsde/", "getItemRatingsResponse");
 
@@ -221,14 +219,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAllUserResponse }
-     * 
-     */
-    public GetAllUserResponse createGetAllUserResponse() {
-        return new GetAllUserResponse();
-    }
-
-    /**
      * Create an instance of {@link GetItemByTypeResponse }
      * 
      */
@@ -266,14 +256,6 @@ public class ObjectFactory {
      */
     public GetAllItem createGetAllItem() {
         return new GetAllItem();
-    }
-
-    /**
-     * Create an instance of {@link GetAllUser }
-     * 
-     */
-    public GetAllUser createGetAllUser() {
-        return new GetAllUser();
     }
 
     /**
@@ -438,15 +420,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllUserResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getAllUserResponse")
-    public JAXBElement<GetAllUserResponse> createGetAllUserResponse(GetAllUserResponse value) {
-        return new JAXBElement<GetAllUserResponse>(_GetAllUserResponse_QNAME, GetAllUserResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetItemByTypeResponse }{@code >}}
      * 
      */
@@ -507,15 +480,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "addNewRating")
     public JAXBElement<AddNewRating> createAddNewRating(AddNewRating value) {
         return new JAXBElement<AddNewRating>(_AddNewRating_QNAME, AddNewRating.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllUser }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.storage.project.introsde/", name = "getAllUser")
-    public JAXBElement<GetAllUser> createGetAllUser(GetAllUser value) {
-        return new JAXBElement<GetAllUser>(_GetAllUser_QNAME, GetAllUser.class, null, value);
     }
 
     /**
