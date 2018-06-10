@@ -24,6 +24,7 @@ public interface BusinessInterface {
 	
 	////////local DB
 	
+	
 	@WebMethod(operationName="addNewUser")
     @WebResult(name="Person") 
 	public Person addNewPerson(
