@@ -58,7 +58,6 @@ public class BusinessImpl implements BusinessInterface {
 	@Override
 	public List<ItemObject> getRecommendations(RecombeeDBType db, Person person, int quantity) {	
 		return StorageService.getRecom(db,person, quantity);
-		
 	}
 
 	@Override

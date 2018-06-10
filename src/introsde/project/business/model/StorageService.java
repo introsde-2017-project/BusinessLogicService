@@ -46,7 +46,7 @@ public class StorageService {
 	public static List<Evaluation> getUserRatings(RecombeeDBType db, Person person) {
 		List<Evaluation> e= new LinkedList<Evaluation>();
 		for(Evaluation ev:serviceInt.getUserRatings(db, person)) {
-			System.out.println(ev.getItemId());
+			//System.out.println(ev.getItemId());
 			double r=ev.getRating();
 			ev.setRating((r*2)+3);
 			e.add(ev);
@@ -59,7 +59,13 @@ public class StorageService {
 	}
 
 	public static List<ItemObject> getAllItem(RecombeeDBType db) {
-		return serviceInt.getAllItem(db);
+		List<ItemObject> i= new LinkedList<ItemObject>();
+		for(ItemObject item: serviceInt.getAllItem(db)) {
+			double r=item.getAvgRating();
+			item.setAvgRating((r*2)+3);
+			i.add(item);
+		}
+		return i;
 	}
 
 	public static List<ItemObject> getItemByType(RecombeeDBType db, String itemType) {
