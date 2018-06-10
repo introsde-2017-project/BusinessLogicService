@@ -48,7 +48,7 @@ public class StorageService {
 		for(Evaluation ev:serviceInt.getUserRatings(db, person)) {
 			//System.out.println(ev.getItemId());
 			double r=ev.getRating();
-			ev.setRating((r*2)+3);
+			ev.setRating(round((r*2)+3,2));
 			e.add(ev);
 		}
 		return e;
@@ -62,7 +62,7 @@ public class StorageService {
 		List<ItemObject> i= new LinkedList<ItemObject>();
 		for(ItemObject item: serviceInt.getAllItem(db)) {
 			double r=item.getAvgRating();
-			item.setAvgRating((r*2)+3);
+			item.setAvgRating(round((r*2)+3,2));
 			i.add(item);
 		}
 		return i;
@@ -76,5 +76,12 @@ public class StorageService {
 		return serviceInt.getPersonByToken(token);
 	}
 
-	
+	private static double round(double value, int places) {
+	    if (places < 0) throw new IllegalArgumentException();
+
+	    long factor = (long) Math.pow(10, places);
+	    value = value * factor;
+	    long tmp = Math.round(value);
+	    return (double) tmp / factor;
+	}
 }
